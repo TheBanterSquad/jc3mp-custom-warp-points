@@ -1,6 +1,3 @@
-// Yes, this is it. This is all you need for a minimal package.
-console.log('Persistent Custom Waypoints V1.');
-
 'use strict';
 const utility = require('../../freeroam/gm/utility');
 const fs = require('fs');

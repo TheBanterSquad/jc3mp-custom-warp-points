@@ -6,6 +6,5 @@ global.customWarp = {
     config: require('../freeroam/gm/config')
 };
 console.log("Custom Warp Points Loaded");
-customWarp.commands.loadFromDirectory(`${__dirname}/commands`, (f, ...a) 
-=> require(f)(...a));
+customWarp.commands.loadFromDirectory(`${__dirname}/commands`, (f, ...a) => require(f)(...a));
 setInterval(() => { }, 500);
