@@ -68,6 +68,6 @@ function saveMarkers(markers){
         saveableMarker.name = marker.command;
         saveableMarkers.push(saveableMarker);
     });
-    fs.writeFile("../locations.json", JSON.stringify(saveableMarkers, null, 2));
+    fs.writeFile("./packages/PersistentCustomWarpPoints/locations.json", JSON.stringify(saveableMarkers, null, 2));
 }
 
