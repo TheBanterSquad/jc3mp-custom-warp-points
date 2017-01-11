@@ -59,13 +59,14 @@ module.exports = ({ Command, manager }) => {
 
 function saveMarkers(markers){
     var saveableMarkers = [];
-    markers.forEach(marker => {
+    markers.forEach(function(marker, name) {
         var saveableMarker = {};
+        saveableMarker.command = "";
         saveableMarker.position = {};
         saveableMarker.position.x = marker.position.x;
         saveableMarker.position.y = marker.position.y;
         saveableMarker.position.z = marker.position.z;
-        saveableMarker.name = marker.command;
+        saveableMarker.command = name;
         saveableMarkers.push(saveableMarker);
     });
     fs.writeFile("./packages/PersistentCustomWarpPoints/locations.json", JSON.stringify(saveableMarkers, null, 2));
