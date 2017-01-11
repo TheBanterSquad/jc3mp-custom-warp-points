@@ -6,17 +6,13 @@ const utility = require('../../freeroam/gm/utility');
 const fs = require('fs');
 
 module.exports = ({ Command, manager }) => {
-    console.log('commands.js executed')
     
     const markers = new Map();
     
     var locations = JSON.parse(fs.readFileSync("./packages/PersistentCustomWarpPoints/locations.json"));
-    console.log(locations);
     locations.forEach(loc => {
         position = new Vector3f(loc.position.x, loc.position.y, loc.position.z)
         poi = new POI(20, new Vector3f(loc.position.x, loc.position.y, loc.position.z), `${loc.command} (/warp ${loc.command})`);
-        console.log(position);
-        console.log(poi);
         poi.minDistance = 10.0;
         poi.maxDistance = 100000.0;
         poi.clampedToScreen = false;

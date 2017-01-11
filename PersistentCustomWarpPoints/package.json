@@ -1,6 +1,0 @@
-{
-  "name": "Persistent-Custom-Warp-Points",
-  "version": "1.0.0",
-  "main": "main.js",
-  "jcmp_dependencies": ["chat", "command-manager"]
-}

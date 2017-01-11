@@ -1,2 +1,2 @@
-# Tait-JC3MP
-Stuff tait makes for JC3MP
+# Custom Warp Points
+A package that allows you to create your own teleport locations

@@ -1,0 +1,11 @@
+{
+  "name": "jc3mp-custom-warp-points",
+  "version": "1.0.0",
+  "main": "main.js",
+  "jcmp_dependencies": ["chat", "command-manager"],
+  "authors": [
+    "Taitenator",
+    "sedders123"
+  ],
+  "license": "MIT"
+}

@@ -5,6 +5,7 @@ global.customWarp = {
     colours: require('../freeroam/vendor/randomColor'),
     config: require('../freeroam/gm/config')
 };
-console.log("main.js executed");
-customWarp.commands.loadFromDirectory(`${__dirname}/Commands`, (f, ...a) => require(f)(...a));
+console.log("Custom Warp Points Loaded");
+customWarp.commands.loadFromDirectory(`${__dirname}/commands`, (f, ...a) 
+=> require(f)(...a));
 setInterval(() => { }, 500);
