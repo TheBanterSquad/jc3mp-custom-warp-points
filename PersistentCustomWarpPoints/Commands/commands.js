@@ -10,7 +10,7 @@ module.exports = ({ Command, manager }) => {
     
     const markers = new Map();
     
-    var locations = JSON.parse(fs.readFileSync("./packages/PersistentCustomWarpPoints/Locations/locations.json"));
+    var locations = JSON.parse(fs.readFileSync("../locations.json"));
     console.log(locations);
     locations.forEach(loc => {
         position = new Vector3f(loc.position.x, loc.position.y, loc.position.z)
@@ -19,6 +19,7 @@ module.exports = ({ Command, manager }) => {
         poi.macDistance = 100000.0;
         poi.clampedToScreen = false;
         markers.set(loc.ommand, poi);
+        saveMarkers(markers);
     });
 
     manager.category('warp', 'warp commands')
@@ -55,6 +56,6 @@ module.exports = ({ Command, manager }) => {
 }
 
 function saveMarkers(markers){
-    fs.writeFile("locations.json", JSON.stringify(markers, null, 2));
+    fs.writeFile("../locations.json", JSON.stringify(markers, null, 2));
 }
 
