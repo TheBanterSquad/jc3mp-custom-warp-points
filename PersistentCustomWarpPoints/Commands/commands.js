@@ -10,16 +10,17 @@ module.exports = ({ Command, manager }) => {
     
     const markers = new Map();
     
-    var locations = JSON.parse(fs.readFileSync("../locations.json"));
+    var locations = JSON.parse(fs.readFileSync("./packages/PersistentCustomWarpPoints/locations.json"));
     console.log(locations);
     locations.forEach(loc => {
         position = new Vector3f(loc.position.x, loc.position.y, loc.position.z)
-        poi = new POI(20, position, `${loc.label} (/warp ${loc.command})`);
+        poi = new POI(20, new Vector3f(loc.position.x, loc.position.y, loc.position.z), `${loc.label} (/tp ${loc.command})`);
+        console.log(position);
+        console.log(poi);
         poi.minDistance = 10.0;
-        poi.macDistance = 100000.0;
+        poi.maxDistance = 100000.0;
         poi.clampedToScreen = false;
-        markers.set(loc.ommand, poi);
-        saveMarkers(markers);
+        markers.set(loc.command, poi);
     });
 
     manager.category('warp', 'warp commands')
