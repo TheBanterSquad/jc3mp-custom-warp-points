@@ -19,7 +19,7 @@ module.exports = ({ Command, manager }) => {
         poi.macDistance = 100000.0;
         poi.clampedToScreen = false;
         markers.set(loc.ommand, poi);
-        saveMarkers(markers)
+        saveMarkers(markers);
     });
 
     manager.category('warp', 'warp commands')
