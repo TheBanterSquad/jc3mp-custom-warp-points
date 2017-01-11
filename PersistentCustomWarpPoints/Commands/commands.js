@@ -14,7 +14,7 @@ module.exports = ({ Command, manager }) => {
     console.log(locations);
     locations.forEach(loc => {
         position = new Vector3f(loc.position.x, loc.position.y, loc.position.z)
-        poi = new POI(20, new Vector3f(loc.position.x, loc.position.y, loc.position.z), `${loc.label} (/tp ${loc.command})`);
+        poi = new POI(20, new Vector3f(loc.position.x, loc.position.y, loc.position.z), `${loc.command} (/warp ${loc.command})`);
         console.log(position);
         console.log(poi);
         poi.minDistance = 10.0;
@@ -57,6 +57,16 @@ module.exports = ({ Command, manager }) => {
 }
 
 function saveMarkers(markers){
-    fs.writeFile("../locations.json", JSON.stringify(markers, null, 2));
+    var saveableMarkers = [];
+    var markers.forEach(marker => {
+        var saveableMarker = {};
+        saveableMarker.position = {};
+        saveableMarker.position.x = marker.position.x;
+        saveableMarker.position.y = marker.position.z;
+        saveableMarker.position.z = marker.position.z;
+        saveableMarker.name = marker.command;
+        saveableMarkers.push(saveableMarker);
+    });
+    fs.writeFile("../locations.json", JSON.stringify(saveableMarkers, null, 2));
 }
 
