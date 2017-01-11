@@ -1,0 +1,11 @@
+[
+  {
+    "position": {
+      "x": 3695.90,
+      "y": 3695.90,
+      "z": 3695.90
+  },
+    "label": "testlabel",
+    "command": "test"
+  }
+]
