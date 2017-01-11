@@ -40,6 +40,7 @@ module.exports = ({ Command, manager }) => {
           poi.maxDistance = 100000.0;
           poi.clampedToScreen = false;
           markers.set(name, poi);
+          saveMarkers(markers);
       }))
 
     .add(new Command(['warp', 'wp'])
@@ -58,11 +59,11 @@ module.exports = ({ Command, manager }) => {
 
 function saveMarkers(markers){
     var saveableMarkers = [];
-    var markers.forEach(marker => {
+    markers.forEach(marker => {
         var saveableMarker = {};
         saveableMarker.position = {};
         saveableMarker.position.x = marker.position.x;
-        saveableMarker.position.y = marker.position.z;
+        saveableMarker.position.y = marker.position.y;
         saveableMarker.position.z = marker.position.z;
         saveableMarker.name = marker.command;
         saveableMarkers.push(saveableMarker);
