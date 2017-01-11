@@ -1,0 +1,8 @@
+{
+  "name": "bare-minimum",
+  "version": "1.0.0",
+  "main": "main.js",
+
+  "author": "Jan Christophersen <jan.c@nanos.io>",
+  "license": "MIT"
+}
