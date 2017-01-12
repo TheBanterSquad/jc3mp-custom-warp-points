@@ -2,7 +2,11 @@
   "name": "jc3mp-custom-warp-points",
   "version": "1.0.0",
   "main": "main.js",
-  "jcmp_dependencies": ["chat", "command-manager"],
+  "jcmp_dependencies": [
+    "chat", 
+    "command-manager",
+    "freeroam"
+  ],
   "authors": [
     "Taitenator",
     "sedders123"
